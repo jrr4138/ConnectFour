@@ -7,7 +7,7 @@ JavaFX Connect Four Game (unfinished win/end condition)
 
 |   Also make sure that when you go to "File -> Preferences -> Settings" and search for "vmargs"
 |   that the bar has. . .  
-|          "--module-path <Your JavaFX lib> --add-modules javafx.controls,javafx.fxml"  
+| "--module-path <Your JavaFX lib> --add-modules javafx.controls,javafx.fxml"  
 |   . . .filled in with the FULL source path
 
 ### FOR INTELLIJ: 1 or 2
