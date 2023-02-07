@@ -6,6 +6,11 @@ import java.util.Scanner;
 import model.ConnectFour;
 import model.ConnectFourException;
 
+/**
+ * Game of Connect Four run on the commnand line
+ * 
+ * @author Josh Ross
+ */
 public class ConnectFourCLI {
     /**
      * Used when printing the board; labels the columns.
@@ -105,10 +110,10 @@ public class ConnectFourCLI {
     }
 
     /**
-     * Returns a {@link String} representation of the game suitable for
+     * Returns a String representation of the game suitable for
      * printing.
      *
-     * @return A {@link String} representation of the game.
+     * @return A String representation of the game.
      */
     private static String gameToString(ConnectFour board) {
         // using a string builder is more efficient than concatenation

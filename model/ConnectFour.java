@@ -3,6 +3,11 @@ package model;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Model of a game of Connect Four. Used in 'view' folder to initialize a game of Connect Four
+ * 
+ * @author Josh Ross
+ */
 public class ConnectFour {
     /**
      * The number of rows in a connect four board.

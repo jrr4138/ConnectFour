@@ -18,6 +18,17 @@ import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
+/**
+ * A Game of Connect Four using JavaFX.
+ * 
+ * To interact with the game, click any box in the column you'd like to drop your piece.
+ * The command line will let the players know who's turn it is.
+ * 
+ * To end the game, simply stop the process from your IDE or close out of the pop-up window
+ * created when the program was run.
+ * 
+ * @author Josh Ross
+ */
 public class ConnectFourGUI extends Application {
     private static final Image BLANK = new Image("file:media/images/blank.png");
     private static final Image BLACK = new Image("file:media/images/blackpiece.png");
@@ -27,6 +38,13 @@ public class ConnectFourGUI extends Application {
     private ConnectFour game;
 
 
+    /**
+     * Creates a single "slot" (as a button) to place the ConnectFour pieces.
+     * 
+     * @param row Row the button will be placed on
+     * @param col Column the button will be placed on
+     * @return A button to be placed in the GridPane at the start
+     */
     private Button makeConnectFourButton(int row, int col) {
         Checker checker = game.getChecker(row, col);
         Image image = BLANK;
@@ -34,6 +52,7 @@ public class ConnectFourGUI extends Application {
 
         ImageView pieceView = new ImageView(image);
 
+        // Fills selected slot dropped piece
         game.register((sq) -> {
             Checker piece = sq.getChecker(row, col);
             Image newImage = BLANK;
@@ -58,6 +77,7 @@ public class ConnectFourGUI extends Application {
 
         butt.setPrefSize(72, 72);
 
+        // When button is selected, drops piece into column and updates player turn
         butt.setOnAction((e) -> {
             Checker check = game.getChecker(row, col);
             try {
@@ -72,11 +92,15 @@ public class ConnectFourGUI extends Application {
     }
     
 
+    /**
+     * Starts the game.
+     */
     @Override
     public void start(Stage stage) throws Exception {
         game = new ConnectFour();
         GridPane pane = new GridPane();
 
+        // fills the gameboard with Slots (buttons)
         for(int col= 0; col < ConnectFour.COLS; col++){
             for(int row = 0; row < ConnectFour.ROWS; row++){
                 Button button = makeConnectFourButton(col, row);
@@ -89,6 +113,10 @@ public class ConnectFourGUI extends Application {
         stage.show();
     }
 
+    /**
+     * Launches a pop-up window for the game to be played in
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }

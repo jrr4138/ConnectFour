@@ -16,13 +16,13 @@ import javafx.stage.Stage;
 import javafx.scene.layout.GridPane;
 
 /**
- * A GUI that allows the user to play a game of ConnectFour
+ * A GUI that allows the user to play a game of ConnectFour.
  * 
- * If a player gets 4 in a row (horizontally, vertically, or diagonally), the game is over.
+ * Click on the buttons at the top labeled "DROP HERE" to drop a piece into that column.
+ * 
  * To end the game, simply close out of the pop-up window that opened when you started the game (ran the program).
  * 
- * @author Joshua Ross SWEN-124
- * @date 4/17/2021
+ * @author Josh Ross
  */
 
 public class ConnectFourGUIattempt2 extends Application{
@@ -45,6 +45,9 @@ public class ConnectFourGUIattempt2 extends Application{
 
     private int colorChecker = 1;
 
+    /**
+     * Starts the game of ConnectFour.
+     */
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -63,7 +66,10 @@ public class ConnectFourGUIattempt2 extends Application{
             }
         }
 
+        // Creates a horizontal box to add the "Drop" buttons above each column
         HBox colButtons = new HBox();
+
+        // Creates the first column with a button to drop at the top
         Button col1 = new Button("DROP HERE");
         col1.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col1.setPadding(new Insets(5));
@@ -84,6 +90,8 @@ public class ConnectFourGUIattempt2 extends Application{
             }
             
         });
+
+        // Creates the second column with a button to drop at the top
         Button col2 = new Button("DROP HERE");
         col2.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col2.setPadding(new Insets(4));
@@ -103,6 +111,8 @@ public class ConnectFourGUIattempt2 extends Application{
                 System.out.println("Column 2 is full, try playing somewhere else :)");
             }
         });
+
+        // Creates the third column with a button to drop at the top
         Button col3 = new Button("DROP HERE");
         col3.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col3.setPadding(new Insets(5));
@@ -122,6 +132,8 @@ public class ConnectFourGUIattempt2 extends Application{
                 System.out.println("Column 3 is full, try playing somewhere else :)");
             }
         });
+
+        // Creates the fourth column with a button to drop at the top
         Button col4 = new Button("DROP HERE");
         col4.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col4.setPadding(new Insets(4));
@@ -141,6 +153,8 @@ public class ConnectFourGUIattempt2 extends Application{
                 System.out.println("Column 4 is full, try playing somewhere else :)");
             }
         });
+
+        // Creates the fifth column with a button to drop at the top
         Button col5 = new Button("DROP HERE");
         col5.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col5.setPadding(new Insets(5));
@@ -160,6 +174,8 @@ public class ConnectFourGUIattempt2 extends Application{
                 System.out.println("Column 5 is full, try playing somewhere else :)");
             }
         });
+
+        // Creates the sixth column with a button to drop at the top
         Button col6 = new Button("DROP HERE");
         col6.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
         col6.setPadding(new Insets(4));
@@ -193,6 +209,10 @@ public class ConnectFourGUIattempt2 extends Application{
         stage.show();
     }
 
+    /**
+     * Launches a pop-up window for the game to be played in
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
